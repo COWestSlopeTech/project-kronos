@@ -4,4 +4,9 @@ A Roaring Fork Technologists community project
 
 # Development Environment
 ## Setup
-Recomendation: Python v 3.7 or greater
+
+Development setup instructions are provided [here](https://github.com/RoaringForkTech/project-kronos/wiki)
+
+# Contributers
+
+* [Steve Tarver](https://github.com/stevetarver)
