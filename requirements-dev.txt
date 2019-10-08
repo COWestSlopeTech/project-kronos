@@ -1,5 +1,6 @@
 -r requirements.txt
 
-ipython
 black
+ipython
+mypy
 pytest

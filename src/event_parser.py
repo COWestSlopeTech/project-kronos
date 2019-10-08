@@ -2,7 +2,6 @@ from typing import Dict, Any, List
 
 
 class EventParser:
-    
     def parse(self, calendar: Dict[str, Any]) -> List[Dict[str, Any]]:
         """
         I parse raw event data into a neutral form
