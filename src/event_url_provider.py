@@ -10,4 +10,6 @@ class EventUrlProvider:
         """
         Return a map of event name -> url
         """
-        return {}
+        return {
+            "eventbrite": "https://www.eventbriteapi.com/v3"
+        }
