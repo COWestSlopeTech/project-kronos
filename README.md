@@ -1,3 +1,5 @@
+[![Build Status](https://www.travis-ci.org/RoaringForkTech/project-kronos.svg?branch=master)](https://www.travis-ci.org/RoaringForkTech/project-kronos)
+
 # Project Kronos
 
 A Roaring Fork Technologists community project
