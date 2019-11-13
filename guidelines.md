@@ -3,7 +3,7 @@
 ## 
 ## Pull Request Acceptance
 1.  Pull requests need to be reviewed by another member.
-2.  When should a 3rd party enter the conversation?
+2.  A 3rd reviewer should be included when two contributors can't agree on approach OR when the two contributors don't have the specific knowledge needed to agree on the best approach.
 
 ## Pull Request Etiquette
 1.  After 3 days of no response, person who created PR should ping the community or a specific member as a polite nudge.
