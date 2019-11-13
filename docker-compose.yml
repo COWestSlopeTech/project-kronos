@@ -1,0 +1,8 @@
+version: '3.2'
+
+services: 
+  kronos:
+    image: python
+  postgres: 
+    image: postgres
+    
