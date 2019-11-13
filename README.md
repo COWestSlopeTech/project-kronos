@@ -12,3 +12,6 @@ Development setup instructions are provided [here](https://github.com/RoaringFor
 # Contributers
 
 * [Steve Tarver](https://github.com/stevetarver)
+
+# Guidelines
+* [Pull Request Guidelines](/guidelines)
