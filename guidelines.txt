@@ -2,3 +2,5 @@
 # Pull Request Guidlines
 ## Pull Request Acceptance
 1.  Pull requests need to be reviewed.
+2.  After 3 days of no response, person who created PR should ping the admin.
+3.  
