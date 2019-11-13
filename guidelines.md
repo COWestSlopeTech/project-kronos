@@ -1,6 +1,6 @@
 
 # Pull Request Guidlines
-## 
+
 ## Pull Request Acceptance
 1.  Pull requests need to be reviewed by another member.
 2.  A 3rd reviewer should be included when two contributors can't agree on approach OR when the two contributors don't have the specific knowledge needed to agree on the best approach.
