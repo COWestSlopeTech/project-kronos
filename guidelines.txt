@@ -1,6 +1,8 @@
 
 # Pull Request Guidlines
 ## Pull Request Acceptance
-1.  Pull requests need to be reviewed.
-2.  After 3 days of no response, person who created PR should ping the admin.
-3.  
+1.  Pull requests need to be reviewed by another member.
+
+## Pull Request Etiquette
+1.  After 3 days of no response, person who created PR should ping the community or a specific member as a polite nudge.
+
