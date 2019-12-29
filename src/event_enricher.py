@@ -2,7 +2,6 @@ from typing import Any, Dict
 
 
 class EventEnricher:
-    
     def enrich(self, data: Dict[str, Any]) -> Dict[str, Any]:
         """
         I provide additional data for an event
