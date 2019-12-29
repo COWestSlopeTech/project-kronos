@@ -2,9 +2,11 @@ from pathlib import PurePath
 from pprint import pprint
 from typing import Dict, Any
 
-import requests
-
 from src.event_provider import EventProviderABC
+
+from eventbrite import Eventbrite
+
+from ..config.eventbrite_config import orgs
 
 
 class EventbriteEventProvider(EventProviderABC):
@@ -28,28 +30,38 @@ class EventbriteEventProvider(EventProviderABC):
         Fetch the content from url
 
         Args:
-            url: url of target calendar
+            url: url of /organizations/{organization_id}/events?{params}
 
         Returns:
             response body in python native form
-        
-        See Also:
-            * https://pypi.org/project/requests/
+
         
         Example requests:
-            * https://www.eventbriteapi.com/v3/events/search?location.address=vancovuer&location.within=10km&expand=venue   -H 'Authorization: Bearer PERSONAL_OAUTH_TOKEN'
+            * /organizations/350577373737/events?page_size=200&status=live
         """
-        url = f"{self.url_prefix}/events/search"
-        headers = self._get_headers()
-        resp = requests.get(url, headers=headers, params=query_params)
 
-        if resp.status_code != 200:
-            msg = f"Error searching Eventbrite: {resp.status_code}"
-            print(msg)
-            pprint(resp.json())
-            raise Exception(msg)
+        eventbrite = Eventbrite(self.api_key)
 
-        return resp.json()
+        all_events = []
+        for key in orgs:
+
+            # TODO: This doesn't work for any other organization than Roaring Fork Technologists because oauth2 needs to be setup.
+            # 200 is the max page_size
+            url = '/organizations/' + orgs[key] + '/events?page_size=200&status=live'
+            resp = eventbrite.get(url)
+
+            pagination_props = resp['pagination']
+            events = resp['events']
+
+            if(len(events) > 0):
+                all_events.extend(events)
+
+            if(pagination_props['has_more_items'] is True):
+                print("There are more events which we can ignore for now...")
+
+        return all_events
+
 
     def _get_headers(self):
         return {"Authorization": f"Bearer {self.api_key}"}
+
