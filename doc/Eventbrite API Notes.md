@@ -15,14 +15,14 @@ We use this key in exploration, tests, etc.
 1. Copy the "URL Example" from this page and paste it into a browser window to prove it works.
 1. Add the following to your `.zshrc`, `.bashrc` or similar and source it. Note: If using PyCharm, you will have to restart it to pick up changes.
     ```bash
-    export KRONOS_EVENTBRITE_API_KEY='YOUR API KY GOES HERE'
+    export EVENTBRITE_KEY='YOUR API KY GOES HERE'
     ```
 1. Restart your shell to reload this config.
 1. Verify it loaded properly
     ```bash
     ᐅ source ~/.zshrc
-    ᐅ env | sort | grep KRONOS
-    KRONOS_EVENTBRITE_API_KEY=XXXXXXXXXXXXXXXX
+    ᐅ env | sort | grep EVENTBRITE
+    EVENTBRITE_KEY=XXXXXXXXXXXXXXXX
     ```
 1. or, you can add this env var to your PyCharm project config
 

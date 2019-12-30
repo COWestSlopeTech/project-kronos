@@ -26,6 +26,9 @@ def main() -> None:
     for name, url in url_provider.get_urls().items():
         raw_events[name] = cal_fetcher.find_events(name, url)
 
+    # Just to see what's happening
+    print("All events --> ", raw_events)
+
 
 if __name__ == "__main__":
     # These lines execute only when this file is called from the command line
