@@ -12,6 +12,7 @@ from src.event_parser import EventParser
 from src.event_pusher import EventPusher
 from src.event_url_provider import EventUrlProvider
 from src.providers.eventbrite_provider import EventbriteEventProvider
+from pprint import pprint
 
 
 def main() -> None:
@@ -27,7 +28,7 @@ def main() -> None:
         raw_events[name] = cal_fetcher.find_events(name, url)
 
     # Just to see what's happening
-    print("All events --> ", raw_events)
+    print(pprint(raw_events))
 
 
 if __name__ == "__main__":

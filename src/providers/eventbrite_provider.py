@@ -1,12 +1,11 @@
 from pathlib import PurePath
-from pprint import pprint
 from typing import Dict, Any
 
 from src.event_provider import EventProviderABC
 
 from eventbrite import Eventbrite
 
-from ..config.eventbrite_config import orgs
+from src.config.eventbrite_config import orgs
 
 
 class EventbriteEventProvider(EventProviderABC):
