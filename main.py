@@ -11,7 +11,7 @@ from src.event_enricher import EventEnricher
 from src.event_parser import EventParser
 from src.event_pusher import EventPusher
 from src.event_url_provider import EventUrlProvider
-from src.providers.eventbrite_provider import EventbriteEventProvider
+from src.providers import EventbriteEventProvider, GoogleProvider
 
 
 def main() -> None:
