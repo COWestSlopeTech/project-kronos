@@ -5,6 +5,7 @@ I am the main entry point to this program
 from typing import Dict, Any
 
 from requests import Response
+from dotenv import load_dotenv
 
 from src.calendar_provider import CalendarProvider
 from src.event_enricher import EventEnricher
@@ -12,6 +13,9 @@ from src.event_parser import EventParser
 from src.event_pusher import EventPusher
 from src.event_url_provider import EventUrlProvider
 from src.providers.eventbrite_provider import EventbriteEventProvider
+
+# Pull in environment variables from dotenv file
+load_dotenv()
 
 
 def main() -> None:
