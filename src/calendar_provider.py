@@ -15,4 +15,3 @@ class CalendarProvider:
             resp = event_brite.find_events(query_params="expand=venue")
 
             return resp
-
