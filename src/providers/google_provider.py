@@ -13,24 +13,28 @@ SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
 
 
 def get_credentials():
+    """
+    Pull Google oauth credentials from their source.
+
+    As currently written, it looks for an `authorized.json` file
+    that has current credentials, and if none exists, it pulls the
+    user through an oauth flow through a local browser session.
+
+    The resulting credentials are then saved for future runs,
+    and on each run, the token is refreshed.
+    """
     creds = None
-    # The file token.pickle stores the user's access and refresh tokens, and is
-    # created automatically when the authorization flow completes for the first
-    # time.
-    # TODO: redo this as json (see from_authorized_user_file - is that the same
-    # as just casting it to json?)
     if os.path.exists('authorized.json'):
         creds = Credentials.from_authorized_user_file('authorized.json')
     # If there are no (valid) credentials available, let the user log in.
-    if not creds:
-        if creds and creds.refresh_token:
-            creds.refresh(Request())
-        else:
-            flow = InstalledAppFlow.from_client_secrets_file(
-                'credentials.json',
-                SCOPES,
-            )
-            creds = flow.run_local_server(port=0)
+    if creds and creds.refresh_token:
+        creds.refresh(Request())
+    else:
+        flow = InstalledAppFlow.from_client_secrets_file(
+            'credentials.json',
+            SCOPES,
+        )
+        creds = flow.run_local_server(port=0)
         # Save the credentials for the next run
         with open('authorized.json', 'w') as auth_file:
             auth_file.write(creds.to_json())
@@ -40,6 +44,10 @@ def get_credentials():
 
 class GoogleProvider(EventProviderABC):
     def find_events(self):
+        """
+        This method pulls credentials and makes a call to the Google API
+        for the next ten events on the user's calendar.
+        """
         credentials = get_credentials()
         service = build('calendar', 'v3', credentials=credentials)
 
