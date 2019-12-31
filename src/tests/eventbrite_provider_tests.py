@@ -1,5 +1,4 @@
 import os
-from pprint import pprint
 from unittest import TestCase
 
 from src.providers.eventbrite_provider import EventbriteEventProvider
@@ -17,5 +16,3 @@ class EventbriteEventProviderTest(TestCase):
 
         # TODO: decouple from the actual EventBrite API to follow best practice
         assert isinstance(provider.find_events(query_params=""), list)
-
-

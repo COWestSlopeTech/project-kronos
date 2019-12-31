@@ -1,9 +1,8 @@
 from src.calendar_provider import CalendarProvider
 from unittest import TestCase
 
+
 class CalendarProviderTest(TestCase):
-
-
     def test_no_name_find_events_returns_none(self):
         """
         NOTE: This is a pretty vacuous test, especially
