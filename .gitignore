@@ -103,6 +103,12 @@ ENV/
 env.bak/
 venv.bak/
 
+# Google oauth credentials from the google provider
+# TODO: remove these when we find a better place/way of
+# storing them
+credentials.json
+authorized.json
+
 # Spyder project settings
 .spyderproject
 .spyproject

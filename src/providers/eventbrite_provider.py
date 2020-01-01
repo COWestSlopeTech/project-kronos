@@ -1,4 +1,3 @@
-from pathlib import PurePath
 from typing import Dict, Any
 
 from src.event_provider import EventProviderABC
@@ -34,7 +33,7 @@ class EventbriteEventProvider(EventProviderABC):
         Returns:
             response body in python native form
 
-        
+
         Example requests:
             * /organizations/350577373737/events?page_size=200&status=live
         """
@@ -63,4 +62,3 @@ class EventbriteEventProvider(EventProviderABC):
 
     def _get_headers(self):
         return {"Authorization": f"Bearer {self.api_key}"}
-
