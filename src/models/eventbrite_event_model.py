@@ -7,14 +7,14 @@ from src.models.event_model import Event
 @dataclass()
 class Eventbrite_Event(Event):
 
-    _status = 'ACTIVE'
+    _status = None
     _capacity = None
     _source_url = None
     _venue_id = None
     _cost = None
     _organization_id = None
-    _invite_only = False
-    _online_event = False
+    _invite_only = None
+    _online_event = None
     _organizer_id = None
 
     @property
