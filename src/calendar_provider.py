@@ -16,12 +16,7 @@ class CalendarProvider:
 
             resp = event_brite.find_events(query_params="expand=venue")
 
-<<<<<<< HEAD
             enricher = EventEnricher()
             events = enricher.enrich(resp, EVENT_SOURCE["EVENT_BRITE"])
 
             return events
-
-=======
-            return resp
->>>>>>> master

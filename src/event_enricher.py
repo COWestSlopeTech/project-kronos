@@ -16,7 +16,7 @@ class EventEnricher:
             data: calendar data in our datastore format
 
         Returns:
-            enriched data
+            enriched data as Event objects
         """
 
         encoded_data = []
@@ -55,11 +55,9 @@ class EventEnricher:
 
                 encoded_data.append(event)
 
-                print("--> ", event.to_json())
-
             elif(EVENT_SOURCE["GOOGLE"]):
                 print("TODO: Support Google enriching")
-                # ev["source"] = source
+
 
         return encoded_data
 

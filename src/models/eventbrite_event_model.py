@@ -7,94 +7,104 @@ from src.models.event_model import Event
 @dataclass()
 class Eventbrite_Event(Event):
 
+    _status = 'ACTIVE'
+    _capacity = None
+    _source_url = None
+    _venue_id = None
+    _cost = None
+    _organization_id = None
+    _invite_only = False
+    _online_event = False
+    _organizer_id = None
+
     @property
     def status(self) -> Optional[str]:
-        assert isinstance(self._status, str), "Event.status must be an str!"
         return self._status
 
     @status.setter
     def status(self, value):
-        assert isinstance(value, str), "Event.status must be an str!"
+        if value is not None:
+            assert isinstance(value, str), "Event.status must be an str!"
         self._status = value
 
     @property
     def capacity(self) -> Optional[int]:
-        assert isinstance(self._capacity, int), "Event.capacity must be an int!"
         return self._capacity
 
     @capacity.setter
     def capacity(self, value):
-        assert isinstance(value, int), "Event.capacity must be an int!"
+        if value is not None:
+            assert isinstance(value, int), "Event.capacity must be an int!"
         self._capacity = value
 
     @property
     def source_url(self) -> Optional[str]:
-        assert isinstance(self._source_url, str), "Event.source_url must be an str!"
         return self._source_url
 
     @source_url.setter
     def source_url(self, value):
-        assert isinstance(value, str), "Event.source_url must be an str!"
+        if value is not None:
+            assert isinstance(value, str), "Event.source_url must be an str!"
         self._source_url = value
 
     @property
     def venue_id(self) -> Optional[str]:
-        # assert isinstance(self._venue_id, str), "Event.venue_id must be an str!"
         return self._venue_id
 
     @venue_id.setter
     def venue_id(self, value):
-        # assert isinstance(value, str), "Event.venue_id must be an str!"
+        if value is not None:
+            assert isinstance(value, str), "Event.venue_id must be an str!"
         self._venue_id = value
 
     @property
     def cost(self) -> Optional[int]:
-        assert isinstance(self._cost, int), "Event.cost must be an int!"
         return self._cost
 
     @cost.setter
     def cost(self, value):
-        assert isinstance(value, int), "Event.cost must be an int!"
+        if value is not None:
+            assert isinstance(value, int), "Event.cost must be an int!"
         self._cost = value
 
     @property
     def organization_id(self) -> Optional[str]:
-        assert isinstance(self._organization_id, str), "Event.organization_id must be an str!"
         return self._organization_id
 
     @organization_id.setter
     def organization_id(self, value):
-        assert isinstance(value, str), "Event.organization_id must be an str!"
+        if value is not None:
+            assert isinstance(value, str), "Event.organization_id must be an str!"
         self._organization_id = value
 
     @property
     def invite_only(self) -> Optional[bool]:
-        assert isinstance(self._invite_only, bool), "Event.invite_only must be an bool!"
         return self._invite_only
 
     @invite_only.setter
     def invite_only(self, value):
-        assert isinstance(value, bool), "Event.invite_only must be an bool!"
+        if value is not None:
+            assert isinstance(value, bool), "Event.invite_only must be an bool!"
         self._invite_only = value
 
     @property
     def online_event(self) -> Optional[bool]:
-        assert isinstance(self._online_event, bool), "Event.online_event must be an bool!"
         return self._online_event
 
     @online_event.setter
     def online_event(self, value):
-        assert isinstance(value, bool), "Event.online_event must be an bool!"
+        if value is not None:
+            assert isinstance(value, bool), "Event.online_event must be an bool!"
         self._online_event = value
 
     @property
     def organizer_id(self) -> Optional[str]:
-        assert isinstance(self._organizer_id, str), "Event.organizer_id must be an str!"
         return self._organizer_id
 
     @organizer_id.setter
     def organizer_id(self, value):
-        assert isinstance(value, str), "Event.organizer_id must be an str!"
+        if value is not None:
+            assert isinstance(value, str), "Event.organizer_id must be an str!"
         self._organizer_id = value
 
     # @property
@@ -118,7 +128,7 @@ class Eventbrite_Event(Event):
     #     self._logo_url = value
 
 
-    def to_json(self):
+    def to_json(self) -> object:
 
         obj = json.loads( super().to_json() )
 
