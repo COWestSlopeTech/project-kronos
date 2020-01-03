@@ -4,3 +4,4 @@ black
 ipython
 mypy
 pytest
+flake8

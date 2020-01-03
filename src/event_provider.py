@@ -11,7 +11,7 @@ class EventProviderABC(ABC):
     def find_events(self, query_params: Dict[str, Any]) -> Dict[str, Any]:
         """
         Fetch the content from url
-        
+
         Args:
             query_params: describe type of search
 
