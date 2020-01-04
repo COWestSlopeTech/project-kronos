@@ -1,5 +1,7 @@
 from typing import List, Dict
 from src.constants.constants import EVENT_SOURCE
+from typing import Dict
+
 
 class EventUrlProvider:
     """
