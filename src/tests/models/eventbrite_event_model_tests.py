@@ -1,31 +1,30 @@
-import json
-from unittest.mock import Mock
 from unittest import TestCase
 
 from src.models.eventbrite_event_model import Eventbrite_Event
 
 from src.tests.models.config import eventbrite_model_fields
 
-class EventBriteModelTest(TestCase):
 
+class EventBriteModelTest(TestCase):
 
     def test_eventbrite_event_model_has_required_props(self):
         """
             Testing that properties are set in the object
         """
-        event_mock = Eventbrite_Event(eventbrite_model_fields["source"], eventbrite_model_fields["source_id"], eventbrite_model_fields["name"])
+        event_mock = Eventbrite_Event(eventbrite_model_fields["source"], eventbrite_model_fields["source_id"],
+                                      eventbrite_model_fields["name"])
 
         assert event_mock.__getattribute__("name") == eventbrite_model_fields["name"]
         assert event_mock.__getattribute__("source") == eventbrite_model_fields["source"]
         assert event_mock.__getattribute__("source_id") == eventbrite_model_fields["source_id"]
-
 
     def test_eventbrite_event_model_has_optional_props(self):
         """
             Testing that properties are set in the object
         """
 
-        event_mock = Eventbrite_Event(eventbrite_model_fields["source"], eventbrite_model_fields["source_id"], eventbrite_model_fields["name"])
+        event_mock = Eventbrite_Event(eventbrite_model_fields["source"], eventbrite_model_fields["source_id"],
+                                      eventbrite_model_fields["name"])
 
         event_mock.__setattr__("start_time", eventbrite_model_fields["start_time"])
         event_mock.__setattr__("end_time", eventbrite_model_fields["end_time"])

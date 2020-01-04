@@ -1,7 +1,7 @@
-from unittest.mock import Mock
 from unittest import TestCase
 
 from src.constants.constants import EVENT_SOURCE, EVENT_STATUS
+
 
 class ConstantsTest(TestCase):
 

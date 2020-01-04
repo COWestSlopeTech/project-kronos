@@ -1,12 +1,12 @@
 import json
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass
 from typing import Optional
 
 from src.models.event_model import Event
 
+
 @dataclass()
 class Eventbrite_Event(Event):
-
     _status = None
     _capacity = None
     _source_url = None
@@ -127,10 +127,9 @@ class Eventbrite_Event(Event):
     #     assert isinstance(value, str), "Event.logo_url must be an str!"
     #     self._logo_url = value
 
-
     def to_json(self) -> object:
 
-        obj = json.loads( super().to_json() )
+        obj = json.loads(super().to_json())
 
         obj["status"] = self.status
         obj["capacity"] = self.capacity

@@ -1,5 +1,5 @@
 import json
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Optional
 
 
@@ -13,7 +13,6 @@ class Event:
     _end_time = None
     _description = None
 
-
     # {'timezone': 'America/Denver', 'local': '2020-02-07T19:00:00', 'utc': '2020-02-08T02:00:00Z'}
     @property
     def start_time(self) -> Optional[str]:
@@ -24,7 +23,6 @@ class Event:
         if value is not None:
             assert isinstance(value, str), 'Event.start_time must be an str!'
         self._start_time = value
-
 
     # {'timezone': 'America/Denver', 'local': '2020-02-07T19:00:00', 'utc': '2020-02-08T02:00:00Z'}
     @property
@@ -37,7 +35,6 @@ class Event:
             assert isinstance(value, str), 'Event.end_time must be an str!'
         self._end_time = value
 
-
     @property
     def description(self) -> Optional[str]:
         return self._description
@@ -47,7 +44,6 @@ class Event:
         if value is not None:
             assert isinstance(value, str), 'Event.description must be an str!'
         self._description = value
-
 
     def to_json(self) -> object:
         obj = {
@@ -59,5 +55,3 @@ class Event:
             "description": self.description
         }
         return json.dumps(obj)
-
-

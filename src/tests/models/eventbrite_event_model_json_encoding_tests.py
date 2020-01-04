@@ -1,5 +1,5 @@
 import json
-from unittest.mock import Mock
+
 from unittest import TestCase
 
 from src.models.eventbrite_event_model import Eventbrite_Event
@@ -14,7 +14,8 @@ class EventBriteModelJsonEncodingTest(TestCase):
             Test that all necessary props are encoded in JSON
         """
 
-        event_mock = Eventbrite_Event(eventbrite_model_fields["source"], eventbrite_model_fields["source_id"], eventbrite_model_fields["name"])
+        event_mock = Eventbrite_Event(eventbrite_model_fields["source"], eventbrite_model_fields["source_id"],
+                                      eventbrite_model_fields["name"])
 
         json_obj = event_mock.to_json()
         json_obj_as_dict = json.loads(json_obj)
@@ -23,13 +24,13 @@ class EventBriteModelJsonEncodingTest(TestCase):
         assert json_obj_as_dict["source"] == eventbrite_model_fields["source"]
         assert json_obj_as_dict["source_id"] == eventbrite_model_fields["source_id"]
 
-
     def test_eventbrite_to_json_has_all_props(self):
         """
             Test that all necessary props are encoded in JSON
         """
 
-        event_mock = Eventbrite_Event(eventbrite_model_fields["source"], eventbrite_model_fields["source_id"], eventbrite_model_fields["name"])
+        event_mock = Eventbrite_Event(eventbrite_model_fields["source"], eventbrite_model_fields["source_id"],
+                                      eventbrite_model_fields["name"])
 
         event_mock.__setattr__("start_time", eventbrite_model_fields["start_time"])
         event_mock.__setattr__("end_time", eventbrite_model_fields["end_time"])

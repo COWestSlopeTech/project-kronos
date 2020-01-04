@@ -1,3 +1,3 @@
 EVENT_STATUS = {"ACTIVE": "ACTIVE", "INACTIVE": "INACTIVE"}
 
-EVENT_SOURCE = {"EVENT_BRITE":"EventBrite", "GOOGLE":"Google"}
+EVENT_SOURCE = {"EVENT_BRITE": "EventBrite", "GOOGLE": "Google"}

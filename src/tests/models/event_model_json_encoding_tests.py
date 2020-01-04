@@ -1,5 +1,5 @@
 import json
-from unittest.mock import Mock
+
 from unittest import TestCase
 
 from src.models.event_model import Event
@@ -8,7 +8,6 @@ from src.tests.models.config import event_model_fields
 
 
 class EventModelJsonEncodingTest(TestCase):
-
 
     def test_event_model_has_optional_props(self):
         """
@@ -45,4 +44,3 @@ class EventModelJsonEncodingTest(TestCase):
         assert json_obj_as_dict["start_time"] == event_model_fields["start_time"]
         assert json_obj_as_dict["end_time"] == event_model_fields["end_time"]
         assert json_obj_as_dict["description"] == event_model_fields["description"]
-

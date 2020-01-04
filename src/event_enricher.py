@@ -3,7 +3,6 @@ from src.constants.constants import EVENT_SOURCE, EVENT_STATUS
 from src.models.eventbrite_event_model import Eventbrite_Event
 
 
-
 class EventEnricher:
     def enrich(self, data: Dict[str, Any], source: str) -> Dict[str, Any]:
         """
@@ -21,14 +20,14 @@ class EventEnricher:
         encoded_data = []
         for ev in data:
 
-            if(source == EVENT_SOURCE["EVENT_BRITE"]):
+            if (source == EVENT_SOURCE["EVENT_BRITE"]):
 
-                event = Eventbrite_Event( EVENT_SOURCE["EVENT_BRITE"], ev["id"], ev["name"]["text"] )
+                event = Eventbrite_Event(EVENT_SOURCE["EVENT_BRITE"], ev["id"], ev["name"]["text"])
 
                 # Optionals
                 event.start_time = "{'timezone': 'America/Denver', 'local': '2020-02-07T19:00:00', 'utc': '2020-02-08T02:00:00Z'}"
                 event.end_time = "{'timezone': 'America/Denver', 'local': '2020-02-07T19:00:00', 'utc': '2020-02-08T02:00:00Z'}"
-                event.description =  ev["description"]["text"]
+                event.description = ev["description"]["text"]
 
                 event.capacity = ev["capacity"]
                 event.source_url = ev["resource_uri"]
@@ -40,13 +39,12 @@ class EventEnricher:
                 # event.image_url = ev["image_url"]
                 # event.logo_url = ev["logo_id"]
 
-                if( ev["is_free"] ):
+                if (ev["is_free"]):
                     event.cost = 0
                 else:
                     event.cost = ev["is_free"]
 
-
-                if( ev["status"] == "live"):
+                if (ev["status"] == "live"):
                     event.status = EVENT_STATUS["ACTIVE"]
                 else:
                     # TODO: determine all status types from EventBrite to set status more precisely
@@ -54,9 +52,7 @@ class EventEnricher:
 
                 encoded_data.append(event)
 
-            elif(EVENT_SOURCE["GOOGLE"]):
+            elif (EVENT_SOURCE["GOOGLE"]):
                 print("TODO: Support Google enriching")
 
-
         return encoded_data
-

@@ -1,5 +1,3 @@
-import json
-from unittest.mock import Mock
 from unittest import TestCase
 
 from src.models.event_model import Event
@@ -8,7 +6,6 @@ from src.tests.models.config import event_model_fields
 
 
 class EventModelTest(TestCase):
-
     event_mock = Event(event_model_fields["source"], event_model_fields["source_id"], event_model_fields["name"])
 
     def test_event_model_has_required_props(self):
@@ -32,4 +29,3 @@ class EventModelTest(TestCase):
         assert self.event_mock.__getattribute__("start_time") == event_model_fields["start_time"]
         assert self.event_mock.__getattribute__("start_time") == event_model_fields["end_time"]
         assert self.event_mock.__getattribute__("description") == event_model_fields["description"]
-
