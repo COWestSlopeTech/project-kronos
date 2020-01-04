@@ -8,9 +8,6 @@ from src.config.eventbrite_config import orgs
 
 
 class EventbriteEventProvider(EventProviderABC):
-    """
-
-    """
 
     def __init__(self, api_key: str):
         """
@@ -58,7 +55,6 @@ class EventbriteEventProvider(EventProviderABC):
                 print("There are more events which we can ignore for now...")
 
         return all_events
-
 
     def _get_headers(self):
         return {"Authorization": f"Bearer {self.api_key}"}
