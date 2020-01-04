@@ -132,18 +132,18 @@ class Eventbrite_Event(Event):
 
         obj = json.loads( super().to_json() )
 
-        obj["status"] = self.__getattribute__("status")
-        obj["capacity"] = self.__getattribute__("capacity")
-        obj["source_url"] = self.__getattribute__("source_url")
-        obj["venue_id"] = self.__getattribute__("venue_id")
-        obj["cost"] = self.__getattribute__("cost")
-        obj["organization_id"] = self.__getattribute__("organization_id")
-        obj["invite_only"] = self.__getattribute__("invite_only")
-        obj["status"] = self.__getattribute__("status")
-        obj["online_event"] = self.__getattribute__("online_event")
-        obj["organizer_id"] = self.__getattribute__("organizer_id")
-        # obj["img_url"] = self.__getattribute__("img_url")
-        # obj["logo_url"] = self.__getattribute__("logo_url")
+        obj["status"] = self.status
+        obj["capacity"] = self.capacity
+        obj["source_url"] = self.source_url
+        obj["venue_id"] = self.venue_id
+        obj["cost"] = self.cost
+        obj["organization_id"] = self.organization_id
+        obj["invite_only"] = self.invite_only
+        obj["status"] = self.status
+        obj["online_event"] = self.online_event
+        obj["organizer_id"] = self.organizer_id
+        # obj["img_url"] = self.img_url
+        # obj["logo_url"] = self.logo_url
         # TODO: Determine what options we have for getting image and logo urls
 
         return json.dumps(obj)
