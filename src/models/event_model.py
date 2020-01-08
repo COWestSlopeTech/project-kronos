@@ -22,7 +22,6 @@ class Event:
     def start_time(self, value: str):
         self._start_time = value
 
-
     # {'timezone': 'America/Denver', 'local': '2020-02-07T19:00:00', 'utc': '2020-02-08T02:00:00Z'}
     @property
     def end_time(self) -> Optional[str]:
