@@ -13,19 +13,19 @@ class EventModelTest(TestCase):
             Testing that properties are set in the object
         """
 
-        assert self.event_mock.__getattribute__("name") == event_model_fields["name"]
-        assert self.event_mock.__getattribute__("source") == event_model_fields["source"]
-        assert self.event_mock.__getattribute__("source_id") == event_model_fields["source_id"]
+        assert self.event_mock.name == event_model_fields["name"]
+        assert self.event_mock.source == event_model_fields["source"]
+        assert self.event_mock.source_id == event_model_fields["source_id"]
 
     def test_event_model_has_optional_props(self):
         """
             Testing that properties are set in the object
         """
 
-        self.event_mock.__setattr__("start_time", event_model_fields["start_time"])
-        self.event_mock.__setattr__("end_time", event_model_fields["end_time"])
-        self.event_mock.__setattr__("description", event_model_fields["description"])
+        self.event_mock.start_time = event_model_fields["start_time"]
+        self.event_mock.end_time = event_model_fields["end_time"]
+        self.event_mock.description = event_model_fields["description"]
 
-        assert self.event_mock.__getattribute__("start_time") == event_model_fields["start_time"]
-        assert self.event_mock.__getattribute__("start_time") == event_model_fields["end_time"]
-        assert self.event_mock.__getattribute__("description") == event_model_fields["description"]
+        # assert self.event_mock.__getattribute__("start_time") == event_model_fields["start_time"]
+        assert self.event_mock.end_time == event_model_fields["end_time"]
+        assert self.event_mock.description == event_model_fields["description"]

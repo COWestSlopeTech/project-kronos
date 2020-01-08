@@ -16,13 +16,13 @@ class EventModelJsonEncodingTest(TestCase):
 
         event_mock = Event(event_model_fields["source"], event_model_fields["source_id"], event_model_fields["name"])
 
-        event_mock.__setattr__("start_time", event_model_fields["start_time"])
-        event_mock.__setattr__("end_time", event_model_fields["end_time"])
-        event_mock.__setattr__("description", event_model_fields["description"])
+        event_mock.start_time = event_model_fields["start_time"]
+        event_mock.end_time = event_model_fields["end_time"]
+        event_mock.description = event_model_fields["description"]
 
-        assert event_mock.__getattribute__("start_time") == event_model_fields["start_time"]
-        assert event_mock.__getattribute__("start_time") == event_model_fields["end_time"]
-        assert event_mock.__getattribute__("description") == event_model_fields["description"]
+        assert event_mock.start_time == event_model_fields["start_time"]
+        assert event_mock.end_time == event_model_fields["end_time"]
+        assert event_mock.description == event_model_fields["description"]
 
     def test_event_to_json_has_all_props(self):
         """
@@ -31,9 +31,9 @@ class EventModelJsonEncodingTest(TestCase):
 
         event_mock = Event(event_model_fields["source"], event_model_fields["source_id"], event_model_fields["name"])
 
-        event_mock.__setattr__("start_time", event_model_fields["start_time"])
-        event_mock.__setattr__("end_time", event_model_fields["end_time"])
-        event_mock.__setattr__("description", event_model_fields["description"])
+        event_mock.start_time = event_model_fields["start_time"]
+        event_mock.end_time = event_model_fields["end_time"]
+        event_mock.description = event_model_fields["description"]
 
         json_obj = event_mock.to_json()
 

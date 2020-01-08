@@ -1,6 +1,6 @@
 from typing import Any, Dict
-from src.constants.constants import EVENT_SOURCE, EVENT_STATUS
-from src.models.eventbrite_event_model import Eventbrite_Event
+from .constants import EVENT_SOURCE, EVENT_STATUS
+from .models.eventbrite_event_model import Eventbrite_Event
 
 
 class EventEnricher:
@@ -36,8 +36,6 @@ class EventEnricher:
                 event.invite_only = ev["invite_only"]
                 event.online_event = ev["online_event"]
                 event.organizer_id = ev["organizer_id"]
-                # event.image_url = ev["image_url"]
-                # event.logo_url = ev["logo_id"]
 
                 if (ev["is_free"]):
                     event.cost = 0

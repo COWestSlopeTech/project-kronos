@@ -2,7 +2,7 @@ import os
 
 from src.providers.eventbrite_provider import EventbriteEventProvider
 from src.event_enricher import EventEnricher
-from src.constants.constants import EVENT_SOURCE
+from src.constants.__init__ import EVENT_SOURCE
 
 
 class CalendarProvider:
@@ -17,6 +17,6 @@ class CalendarProvider:
             resp = event_brite.find_events(query_params="expand=venue")
 
             enricher = EventEnricher()
-            events = enricher.enrich(resp, EVENT_SOURCE["EVENT_BRITE"])
+            events = enricher.enrich(resp, name)
 
             return events

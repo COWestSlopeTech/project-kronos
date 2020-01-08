@@ -22,9 +22,7 @@ class Eventbrite_Event(Event):
         return self._status
 
     @status.setter
-    def status(self, value):
-        if value is not None:
-            assert isinstance(value, str), "Event.status must be an str!"
+    def status(self, value: str):
         self._status = value
 
     @property
@@ -32,9 +30,7 @@ class Eventbrite_Event(Event):
         return self._capacity
 
     @capacity.setter
-    def capacity(self, value):
-        if value is not None:
-            assert isinstance(value, int), "Event.capacity must be an int!"
+    def capacity(self, value: int):
         self._capacity = value
 
     @property
@@ -42,9 +38,7 @@ class Eventbrite_Event(Event):
         return self._source_url
 
     @source_url.setter
-    def source_url(self, value):
-        if value is not None:
-            assert isinstance(value, str), "Event.source_url must be an str!"
+    def source_url(self, value: str):
         self._source_url = value
 
     @property
@@ -52,9 +46,7 @@ class Eventbrite_Event(Event):
         return self._venue_id
 
     @venue_id.setter
-    def venue_id(self, value):
-        if value is not None:
-            assert isinstance(value, str), "Event.venue_id must be an str!"
+    def venue_id(self, value: str):
         self._venue_id = value
 
     @property
@@ -62,9 +54,7 @@ class Eventbrite_Event(Event):
         return self._cost
 
     @cost.setter
-    def cost(self, value):
-        if value is not None:
-            assert isinstance(value, int), "Event.cost must be an int!"
+    def cost(self, value: int):
         self._cost = value
 
     @property
@@ -72,9 +62,7 @@ class Eventbrite_Event(Event):
         return self._organization_id
 
     @organization_id.setter
-    def organization_id(self, value):
-        if value is not None:
-            assert isinstance(value, str), "Event.organization_id must be an str!"
+    def organization_id(self, value: str):
         self._organization_id = value
 
     @property
@@ -82,9 +70,7 @@ class Eventbrite_Event(Event):
         return self._invite_only
 
     @invite_only.setter
-    def invite_only(self, value):
-        if value is not None:
-            assert isinstance(value, bool), "Event.invite_only must be an bool!"
+    def invite_only(self, value: bool):
         self._invite_only = value
 
     @property
@@ -92,9 +78,7 @@ class Eventbrite_Event(Event):
         return self._online_event
 
     @online_event.setter
-    def online_event(self, value):
-        if value is not None:
-            assert isinstance(value, bool), "Event.online_event must be an bool!"
+    def online_event(self, value: bool):
         self._online_event = value
 
     @property
@@ -102,9 +86,7 @@ class Eventbrite_Event(Event):
         return self._organizer_id
 
     @organizer_id.setter
-    def organizer_id(self, value):
-        if value is not None:
-            assert isinstance(value, str), "Event.organizer_id must be an str!"
+    def organizer_id(self, value: str):
         self._organizer_id = value
 
     # @property
