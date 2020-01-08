@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from src.constants.__init__ import EVENT_SOURCE, EVENT_STATUS
+from src.constants import EVENT_SOURCE, EVENT_STATUS
 
 
 class ConstantsTest(TestCase):

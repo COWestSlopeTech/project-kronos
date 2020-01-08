@@ -1,4 +1,4 @@
-from src.constants.__init__ import EVENT_SOURCE
+from src.constants import EVENT_SOURCE
 from typing import Dict
 
 

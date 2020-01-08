@@ -2,7 +2,7 @@ import os
 
 from src.providers.eventbrite_provider import EventbriteEventProvider
 from src.event_enricher import EventEnricher
-from src.constants.__init__ import EVENT_SOURCE
+from src.constants import EVENT_SOURCE
 
 
 class CalendarProvider:
