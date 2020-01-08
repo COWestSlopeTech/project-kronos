@@ -1,3 +1,4 @@
+from src.constants import EVENT_SOURCE
 from typing import Dict
 
 
@@ -11,5 +12,5 @@ class EventUrlProvider:
         Return a map of event name -> url
         """
         return {
-            "eventbrite": "https://www.eventbriteapi.com/v3"
+            EVENT_SOURCE["EVENT_BRITE"]: "https://www.eventbriteapi.com/v3"
         }

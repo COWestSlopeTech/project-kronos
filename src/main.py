@@ -8,6 +8,8 @@ from dotenv import load_dotenv
 
 from src.calendar_provider import CalendarProvider
 from src.event_url_provider import EventUrlProvider
+from pprint import pprint
+
 
 # Pull in environment variables from dotenv file
 load_dotenv()
@@ -26,7 +28,7 @@ def main() -> None:
         raw_events[name] = cal_fetcher.find_events(name, url)
 
     # Just to see what's happening
-    print("All events --> ", raw_events)
+    print(pprint(raw_events))
 
 
 if __name__ == "__main__":

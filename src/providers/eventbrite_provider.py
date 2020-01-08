@@ -4,7 +4,7 @@ from src.event_provider import EventProviderABC
 
 from eventbrite import Eventbrite
 
-from ..config.eventbrite_config import orgs
+from src.config.eventbrite_config import orgs
 
 
 class EventbriteEventProvider(EventProviderABC):
